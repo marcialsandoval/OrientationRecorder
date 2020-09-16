@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.io.BufferedWriter;
@@ -45,7 +46,7 @@ public class OrientationActivity extends AppCompatActivity implements SensorEven
     int orientationValue;
     File storageDir;
     String csvString = "";
-
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class OrientationActivity extends AppCompatActivity implements SensorEven
         orientationTextView.setText("No orientation");
         storageDir = getOutputDirectory("OrientationRecorder");
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         snackbar = Snackbar.make(fab, "Recording orientation...", Snackbar.LENGTH_INDEFINITE)
                 .setAction("Action", null);
 
@@ -68,11 +69,18 @@ public class OrientationActivity extends AppCompatActivity implements SensorEven
 
                 if(snackbar.isShown()){
 
-                    snackbar.dismiss();
+                    fab.animate().translationY(0).start();
+
                     createCSVFile();
                     csvString = "";
 
+                    snackbar.setText("orientations.csv file saved");
+                    snackbar.setDuration(Snackbar.LENGTH_LONG).show();
+
+
                 }else{
+
+                    fab.animate().translationY(-100).start();
 
                     //Checks for granted write external Permission
                     if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -81,8 +89,8 @@ public class OrientationActivity extends AppCompatActivity implements SensorEven
                                 new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_PERMISSION_RQST);
 
                     }else{
-
-                        snackbar.show();
+                        snackbar.setText("Recording orientation...");
+                        snackbar.setDuration(Snackbar.LENGTH_INDEFINITE).show();
 
                     }
                 }
