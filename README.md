@@ -4,7 +4,7 @@
 
 ## Summary
 
-OrientationRecorder is an android app which goal is to determine the mobile phones orientation by using the devices inercial sensors (accelerometer and magnetometer), but also to record these sensor readings and the apps outcomes into a .csv file. 
+OrientationRecorder is an android app which goal is to determine the mobile phones orientation by using the devices inercial sensors (accelerometer and magnetometer), but also to record these sensor readings including the apps outcome into a .csv file. 
 
 ## Pre requisites
 
