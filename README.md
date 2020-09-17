@@ -4,11 +4,14 @@
 
 ## Summary
 
-OrientationRecorder is an android app which goal is to determine the mobile phones orientation (North (N), Northeast (NE), Northwest (NW), East (E), South (S), Southeast (SE), Southwest (SW) and West (W)) by using the devices inercial sensors (accelerometer and magnetometer), but also to record these sensor readings including the apps outcome into a .csv file. 
+OrientationRecorder is an android app which goal is to define the mobile phones orientation (North (N), Northeast (NE), Northwest (NW), East (E), South (S), Southeast (SE), Southwest (SW) and West (W)) by using the devices inercial sensors (accelerometer and magnetometer), but also to record these sensor readings including the apps outcome into a csv file. 
 
 ## Pre requisites
 
+An Android device or an emulator running API level 19 or higher.
+
 ## Use
+The app has on single activity where the orientation outcome is displayed.
 
 ![n](https://user-images.githubusercontent.com/61889565/93400032-b1e7cb00-f833-11ea-85ef-c6c8b4d33838.png)
 ![ne](https://user-images.githubusercontent.com/61889565/93400033-b1e7cb00-f833-11ea-9f52-06a571ba86f9.png)
@@ -19,10 +22,14 @@ OrientationRecorder is an android app which goal is to determine the mobile phon
 ![w](https://user-images.githubusercontent.com/61889565/93400041-b318f800-f833-11ea-8765-2c13b35ca960.png)
 ![nw](https://user-images.githubusercontent.com/61889565/93400035-b1e7cb00-f833-11ea-8b0f-108b3b916730.png)
 
+When desired, push the blue floating button on the lower right side of the screen to start 'recording' the sensor values. For stop 'recording', push again the same button.  
 
 ![recording](https://user-images.githubusercontent.com/61889565/93400036-b2806180-f833-11ea-8f00-58a155e874d9.png)
 
 ## Result
+
+When the recording process has been stopped, the app exports a csv file with the recorded values.
+
 ![csv_saved](https://user-images.githubusercontent.com/61889565/93400026-b0b69e00-f833-11ea-9d0b-48206d74b34c.png)
 
 
